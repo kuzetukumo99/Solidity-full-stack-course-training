@@ -1,8 +1,13 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.8;
+
+//EVM Ethereum Virtual Machine
+//Avalanche, Polygon, Fantom
+
 contract SimpleStorage {
     
     uint256 favoriteNumber;// ０に初期化する。uint256 favoriteNumber == 0と等しい。
+    //bool, string, bytes32
     //visibility(アクセス件) public:全員見れるようにする
     //favoriteNumberはグローバルスコープ
     //ストレージスロット0に保存される
@@ -36,7 +41,7 @@ contract SimpleStorage {
     //関数内では、_name変数はどこにも保存されないことをSolidityが知っているので、storageは使えず、memoryとcalldataのみ指定できる
     function addPerson(string memory _name, uint256 _favoriteNumber) public{
         people.push(People(_favoriteNumber, _name));
-        nameToFavoriteNumber[_name] = _favoriteNumber;//_nameを受け取り、それに対応する_favoriteNumberがnameToFavoriteNumberに再代入される
+         nameToFavoriteNumber[_name] = _favoriteNumber;//_nameを受け取り、それに対応する_favoriteNumberがnameToFavoriteNumberに再代入される
     }
 
 }
